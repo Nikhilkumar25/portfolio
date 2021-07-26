@@ -1,7 +1,7 @@
 on:
   push:
     tags:
-      - V*
+      - v*
 name: Continous release build web
 jobs:
   build:
