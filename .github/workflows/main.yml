@@ -25,5 +25,6 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         artifacts: 'build/web/web-app.zip'
+        tag: ${{ env.APP_VERSION }}
         token: ${{secrets.FLUTTER_TOKEN}}
   
