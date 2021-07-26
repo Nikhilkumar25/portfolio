@@ -128,6 +128,17 @@ class Portfolio extends StatelessWidget {
                       color: Colors.green,
                       size: 40,
                     )),
+                IconButton(
+                    padding: EdgeInsets.fromLTRB(0, 0, 6, 0),
+                    alignment: Alignment(0.0, 0.0),
+                    onPressed: () {
+                      openUrl(waUrl);
+                    },
+                    icon: const FaIcon(
+                      FontAwesomeIcons.whatsapp,
+                      color: Colors.green,
+                      size: 40,
+                    )),
               ],
             ),
             Text(
