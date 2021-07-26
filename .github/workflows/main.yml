@@ -16,11 +16,14 @@ jobs:
       with:
         flutter-verison: '2.4.0'
     - run: flutter pub get
-    - run: flutter build web -t lib/main.dart
+    - run: |
+          flutter build web
+          cd build/web
+          zip -r web-app.zip .
 #     - run: flutter build apk -t lib/main.dart --split-per-abi
     - name: release web
       uses: ncipollo/release-action@v1
       with:
-        artifacts: 'build/web'
+        artifacts: 'build/web/web-app.zip'
         token: ${{secrets.FLUTTER_TOKEN}}
   
