@@ -21,7 +21,6 @@ jobs:
     - run: |
           flutter build web
           cd build/web
-          zip -r web-app.zip .
 #     - run: flutter build apk -t lib/main.dart --split-per-abi
     - name: release web
       uses: ncipollo/release-action@v1
@@ -29,5 +28,5 @@ jobs:
         
         tag: ${{ env.APP_VERSION }}
         token: ${{secrets.FLUTTER_TOKEN}}
-        artifacts: 'build/web/web-app.zip'
+        artifacts: 'build/web/'
   
