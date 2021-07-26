@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/link.dart';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -11,6 +12,8 @@ class Portfolio extends StatelessWidget {
       "https://iamnikhil.netlify.app/files/resume/Resume-Nikhil-Kumar.pdf";
 
   final email = "nikhilaggarwal122@gmail.com";
+  final instaUrl = "https://instagram.com/mast_rehne_ka";
+  final waUrl = "wa.me/7073794926";
 
   String about1 =
       "I am a third-year student pursuing Int. M.Tech. In Geological Technology at IIT Roorkee, I am an enthusiastic learner with a good team spirit and communication skills. I am interested in Entrepreneurship, Mobile app development, Geological research.";
@@ -41,13 +44,16 @@ class Portfolio extends StatelessWidget {
               "Nikhil Kumar",
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.black,
-                fontSize: 33,
-                fontWeight: FontWeight.w900,
-              ),
+                  color: Colors.black,
+                  fontSize: 33,
+                  fontWeight: FontWeight.w900,
+                  fontStyle: FontStyle.italic,
+                  fontFamily: 'Tourney'),
             ),
-            ClipRRect(
-                borderRadius: BorderRadius.circular(75.0),
+            Container(
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
                 child: Image.asset(
                   "/images/abc.png",
                   width: 150.0,
@@ -75,9 +81,33 @@ class Portfolio extends StatelessWidget {
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
+                    padding: EdgeInsets.fromLTRB(0, 0, 6, 0),
+                    alignment: Alignment(0.0, 0.0),
+                    onPressed: () {
+                      openUrl(instaUrl);
+                    },
+                    icon: const FaIcon(
+                      FontAwesomeIcons.github,
+                      color: Colors.black,
+                      size: 40,
+                    )),
+                IconButton(
+                    padding: EdgeInsets.fromLTRB(0, 0, 6, 0),
+                    alignment: Alignment(0.0, 0.0),
+                    onPressed: () {
+                      openUrl(instaUrl);
+                    },
+                    icon: const FaIcon(
+                      FontAwesomeIcons.instagram,
+                      color: Colors.pink,
+                      size: 40,
+                    )),
+                IconButton(
+                  padding: EdgeInsets.fromLTRB(0, 0, 6, 0),
+                  alignment: Alignment(0.0, 0.0),
                   icon: const Icon(
                     Icons.email_rounded,
                     color: Colors.red,
@@ -87,6 +117,17 @@ class Portfolio extends StatelessWidget {
                     sendMail(email);
                   },
                 ),
+                IconButton(
+                    padding: EdgeInsets.fromLTRB(0, 0, 6, 0),
+                    alignment: Alignment(0.0, 0.0),
+                    onPressed: () {
+                      openUrl(waUrl);
+                    },
+                    icon: const FaIcon(
+                      FontAwesomeIcons.whatsapp,
+                      color: Colors.green,
+                      size: 40,
+                    )),
               ],
             ),
             Text(

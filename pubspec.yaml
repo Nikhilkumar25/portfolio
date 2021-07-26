@@ -35,6 +35,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   url_launcher: ^6.0.9
+  font_awesome_flutter: ^9.1.0
+
 
 dev_dependencies:
   flutter_test:
@@ -60,7 +62,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - build/flutter_assets/images/abc.png
+    - assets/images/
+    - assets/fonts/
     
 
   # assets:
@@ -72,6 +75,13 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
+
+  fonts:
+    - family: Tourney
+      fonts:
+        - asset: assets/fonts/Tourney-Italic-VariableFont_wdth,wght.ttf
+        - asset: assets/fonts/Tourney-VariableFont_wdth,wght.ttf
+          style: normal
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
